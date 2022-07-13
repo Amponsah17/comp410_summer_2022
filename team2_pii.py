@@ -38,3 +38,9 @@ def find_us_bank_account(text):
     if match:
         return True
     return False
+
+def find_us_address(text):
+    match = re.search(r'(\d{1,5}\s{1}[\w\s]*,\s{1}[\w\s-]*,\s{1}[A-Z]{2},\s{1}(\d{5}-\d{4}|\d{5}))', text)
+    if match:
+        return True
+    return False

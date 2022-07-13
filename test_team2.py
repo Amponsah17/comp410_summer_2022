@@ -6,6 +6,7 @@ from team2_pii import find_credit_card_number
 from team2_pii import find_us_email
 from team2_pii import find_us_twitter_handle
 from team2_pii import find_us_bank_account
+from team2_pii import find_us_address
 
 
 class Team2TestCases(unittest.TestCase):
@@ -93,6 +94,18 @@ class Team2TestCases(unittest.TestCase):
 
         bank = '345cn4nj3'
         self.assertFalse(find_us_bank_account(bank))
+
+    def test_us_address(self):
+        #testing valid address
+        address = '5639 Havenville Street, Nashville, TN, 39448'
+        self.assertTrue(find_us_address(address))
+
+        address = '37621 Amber Street, Greensboro, NC, 39102-3914'
+        self.assertTrue(find_us_address(address))
+
+        #testing invalid address
+        address = 'I live at 410335 Chamber Avenue, Phoenix, Arizona, 3018'
+        self.assertFalse(find_us_address(address))
 
 if __name__ == '__main__':
     unittest.main()
