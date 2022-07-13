@@ -19,3 +19,11 @@ def show_aggie_pride():
 
 if __name__ == '__main__':
     print(show_aggie_pride())
+
+
+def scan_files():
+    return None
+
+
+def get_file_text():
+    return None
